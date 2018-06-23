@@ -1,14 +1,7 @@
-<!--detail.hml-->
-<h1>
-  Contract detail Page
-</h1>
+<p class="date">Published {{ contract.project_publish_date }} for {{ contract.client_name }}</p>
+{{ contract.contract_description}}
 
-<p>
- {{ contracts.approved.all }}
-</p>
 
-{% for contract in contracts %}
 
-  <p><a href="{{ contract.get_absolute_url }}">{{ contract.project_title }}</a></p>
 
-{% endfor %}
+

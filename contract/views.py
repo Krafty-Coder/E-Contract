@@ -30,13 +30,14 @@ class ContactListView(ListView):
 
 
 def contract_detail(request, year, month, day, contract):
+    page = request.GET.get('page')
     contract = get_object_or_404(Contract, slug=contract,
                                  project_status='approved',
                                  project_publish_date__year=year,
                                  project_publish_date__month=month,
                                  project_publish_date__day=day)
-    # list of similar contracts
-    return render(request, 'contracts/detail.html', {'contract': contract})
+
+    return render(request, "contracts/detail.html", {'page': page, 'contract': contract})
 
 
 def contract_share(request, contract_id):
