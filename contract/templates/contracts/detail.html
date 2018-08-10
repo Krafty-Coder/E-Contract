@@ -4,11 +4,9 @@
 </h1>
 
 <p>
- {{ contracts.approved.all }}
+  Published {{contract.project_publish_date}} for {{ contract.client_name }}
 </p>
+<p>Body {{ contract.project_description }}</p>
 
-{% for contract in contracts %}
 
-  <p><a href="{{ contract.get_absolute_url }}">{{ contract.project_title }}</a></p>
 
-{% endfor %}
